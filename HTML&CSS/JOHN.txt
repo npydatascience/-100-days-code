@@ -1,0 +1,149 @@
+Emmet vi-code for html not working. 
+Html is white space collapsing.
+<img src=“” width=“60(absolute)/20%(relative)” alt=“”/>
+Using width and height still loading big image and cropping(displaying portion rather cropping) at client side so , crop using Mac preview tool adjust width and height and reduce ima size and no need to use width and height as above anymore. This preview tool have adjust size in tools, it by default lock height and as we change width height is auto adjusted.
+Links within same page with smooth scrolling. Linked by id and #id
+<a href=“” target=“_blank”></a> handfinger curser. 
+Empty link image link… empty link don’t lead us anywhere for this href=‘#’
+Sup and sub element eg <h1>dipped<sup>thapa</sup>is <sub>wow</sub></h1> ..to display above and below from common line.
+Strong and em elements to text turn bold and slanted respectively. Can be done with css.
+Html special character code google and use.
+ul,ol, unordered list vs ordered list. ul used in navigation. Nested list. text area, Table, radio button(checked attribute), checkbox(checked attribute), select inputs.
+Shortcuts:
+
+JOHNshortcut.jpg
+ 
+command+D=select instance(multiple)
+Option +up/down =move the line up/down
+option+left/right, command +up/down , command + up/down.
+Google html head.
+Selectors css: element, classes, id.
+Colon and semi-colon and dash are imp inside declaration block containing prop and values h2{ font-size:30px;}
+Grouping selector h1,h2,p{} or use class selectors. Selects multiple element
+Multiple classes+id for same element. Id must be unique while class can be added on many element.
+Div vs span :div element used to group multiple element and span element used to group inline content.
+Css property: text-transform: uppercase; line-height:20px; font-family:”monotone”; width: 20vw; height:40vh;
+All children inherit style from parent unless they have their own style. Inheritance.
+Last rule wins and Specificity, universal selector(*). Class has more specificity than element but less specific than id. Universal selector less specific selector. 
+We use universal selector when we override the default browser styles. We don’t want this styles and later make specific styles for those elements.
+
+Combine selectors-Descendant selector:  <div class=“container”><h2>something</h2><p>my paragraph</p></div> we can select only one paragraph: .container p{}
+
+
+1>> Colors in CSS:
+color and background color of the element: color: white; background-color: rgba(255,0,0,0.5); background-image:;  //use background:color or image or both. RGBA A=transparency/opacity. Can be used in overlay made over image so, heading on top is visible…
+HSL and HEX: for HEX color #RRGGBB eg #FF0000=red #000=black #FFF=white . Sites gives colors swap(which work together): coolors.co
+Body{
+   background: f1f5f9;
+}
+
+
+2>>  CSS units: absolute(pixels, same on any screen), relative(em, rem, vw, vh, %), font-size, height, width properties to change element.
+1em=16px, default browser style(if parent don’t override browser font-size). 16px is base value check setting of browser and change base value. Em relative to parent. If parent override 16px to 10 px, base value will be 10 px.
+1rem=base value(16px), while em depends on parent but rem depends on root(i.e. default browser as in em if it has no parents but don’t ever depend on parents). can also be controlled using root element from style sheet for rem rather than from browser setting. HTML=root sp change font-size targeting html element in css you will see changes in element having rem value.
+
+In short em depends on parent(else default browser setting) while rem on root(html) else(default browser setting).
+Lecturer fav is vh and vw,(percent of hight or width of screen), they are relative to height and width unlike percent unit relative to parents.
+Default margin comes from browser so use * selector .
+*{
+  margin: 0;
+ Padding:0;
+ box-sizing: boder-box;
+} 
+
+Default browser styles(base styles): look in browser dev tool. (In user agent stylesheet in css part of dev tool chrome)
+CALC function in css to allow math operation: eg:  .banner{height: calc(100vh-100px); }
+
+height:auto; min-height, max-height, overflow properties: video number 009
+
+3>>TYPOGRAPHY IN CSS:(font-stack, generic family, google font): properties and value:
+Properties font-size, font-family, font-weight, font-style, text-align, text-indent, line-height, letter-spacing, word-spacing, text-transform, text-decoration
+Body{
+   font-family: “Helvetica”
+}
+What if browser don’t support font we use in project so, we stack many font as fallback system called font stack. We passed in generic font family as fallback if none of the font family works. Generic font family are serif, sens-serif, cursive, fantasy, monospace.
+Google monospace font stack. // generic font family font stack.
+https://css-tricks.com/snippets/css/font-stacks/
+If you looking for generic font in vs code look for one start with lower case from recommended dropdown when we type css font family.
+In google font more font or variations(eg regular 400) you add, more load time as Clint need to download from google font.
+regular fonts css meaning google
+One we cover google fonts another font becoming more and more popular ie SYSTEM FONTS(already installed fonts in particular device). They are different for different os. Boost performance as browser don’t download any font file and uses it’ s system font according to stacked fonts. with new system versions, come new fonts, and thus the possibility of needing to update your font stack. 
+Using system font, your project will look different from system to system. 
+
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  font-size: 20px;
+  line-height:1.5;
+  text-transform: uppercase;
+  background: #f1f5f9
+}
+Do inheritance for each properties from body and override them if needed in each child element.
+
+Apple devices=-apple-system,BlinkMacSystemFont
+Windows system="Segoe UI"
+android=Roboto etc
+Fallback generic font family at last=sans-serif
+https://css-tricks.com/snippets/css/system-font-stack/
+
+Google font=trade winds(regular 400), Roberto(regular 400, medium 500 italic, bold 700), and add Roberto to body and override with trade winds in each element if needed.
+Let’s look at FONT WEIGHT AND FONT STYLE properties: google  font weight css(options 100….900/bold/normal/bolder/lighter, only use one you imported).
+font style css google(options normal, italic, oblique). font-style and font-weight normal by default. Video number 007
+
+Let’s look text-align and text-indent properties: Text align left is default. Google text indent css.
+
+Let’s look line-height, letter-spacing, word-spacing, text-transform, text-decoration css properties: line-height used in * (universal selector) as globally. If we don’t use any unit like px, rem etc, only the number in line-height, it will be relative to font-sizes element even if line-height declared in globally * . letter-spacing &word-spacing is the best google use.  URL have text underline so use text-decoration: none and google for other values, for important text in paragraph for your blog can use underline or other properties. text transform in css google, values capitalize(to capitalize first letter of each word), lowercase, uppercase.
+
+4>> CSS BOX MODEL(padding, border, margin, border-radius, negative margin): each element represented as box, google padding css, border css, margin css. Browser gives default margin so *. Just do margin:0 in * and you don’t have to confuse yourself about upper margin maxim course as now top margen are added with 0 not default browser margin.UNIVERSAL SELECTOR * PROPERTIES IS APPLIED SEPARATELY TO EACH ELEMENT and eliminate default browser for each element in html. MARGIN distance between element and screen OR element and other element/s. 
+
+Let’s look border-radius and negative margin: border radius css google use 50% for circle/ellipse, negative margin use negative value.
+Let’s look outline property above border  [margin=>border=>outline=>padding]. Outline is line drawn outside border. Watch video 006 007.
+
+5>> DISPLAY PROPERTY(display: block/inline/inline-block  &  box-sizing:border-box):block element start from new line and takes whole width ie spanning all across(div, h1-7, p etc), inline element not start new line and take only spanning to width of content(img, span, link).  We can flip or change default behavior for css element ie can change from block to inline and vice versa. Use property display: inline/block to flip. 
+To know text-align:center works only for inline element and margin:0px auto OR margin-left/right:auto works only for block with some defined width smaller than screen width. Text is always inline element even h1..7 is block element, it’s text is inline hence text-align: centre/left/right works for text not whole block h1..7 element.  look 003 centering video.
+
+For block element, width and height properties as well as top and bottom margins are respected by browser but not for inline elements so, to get respected by browser need to convert inline to block level element in display property.  look 004 video.
+Descendent selector eg(ul li{list-style-type: lower-roman/none}).
+
+By default box sizing model is content-box, which applies an element’s declared width to its content only, placing the padding and border outside the element’s box. This effectively increases how much space the element takes up. Video 005.
+
+display: inline-block;  used for inline element if we don’t want to start from new line(inline element property) and want browser to accept width, height, top-bottom margin margin for those inline elements(block property). Video 006.
+
+display: none; -remove from the flow , hide the element and collapse the space.
+opacity: 0; and visibility: hidden; - hides element, preserves the space.
+
+We can have many section in same html page eg  about, contact, experience, hero etc and use different background color/ image mostly color gives good representation, each section use different background to separate section. Add some padding on each section, padding 0 for left and right as we going to use content center. Why section title separate div and different color. 
+Video 005 for width 90vw, and max-width 1170px.
+
+6>> BACKGROUND IMAGE(background:url(‘./img.jpg’); background-repeat, background-size, background-position, background-attachment, linear-gradient + shorthand, ColorZilla): we already learn background color now time for background image.
+Background image for hero section. Nice overlay using linear gradient and explore one of many css linear gradient out there called ColorZilla.  Background image, overlay, title, paragraph and call to action in hero section. 
+
+By default, if image size smaller then div(/other wrapping element) height(added manually) & width(default screen width) ie div size then image repeats in both direction horizontal(x-axis) and vertical(y-axis) to cover the div size and if image size larger then the div size then image overflows and hidden the portion that is out of div periphery. 
+Google background-repeat css for repeating smaller image having size smaller then div size. By default background image set to repeat in x-y direction of div. 
+Use background-repeat:no-repeat; and to fill of the space with small size image use background-size:cover/contain; google background size in css. Here cover will cover whole div regardless of size of div but size of image play key role, it is good to have same ratio of width and height for div as image and div is different for different screen so relative size can be used, for smaller image quality of image deteriorates as stretching div ie screen so while picking background image don’t pick small image as quality suffer. Contain only takes enough space to fit image ratio so, there may be blank if image ratio and div ratio of size differ can be used to make gallery of image to fill space. 
+
+background-position: center for most cases. Google background position css. Look video 006.  
+
+background attachment scroll by default, use fixed as value to see changes. Google background-attachment css. Look video 007.
+
+Linear gradient as overlay for background image to see text infant it displayed using flex box, google linear gradient css. 
+Percentage after color in linear gradient is the solid color percentage not the transition color percentage. Look video 008.
+Linear gradient and write all property on one line video number 009 background image overlay vvv important.
+
+ColorZilla linear Gradient generator is website to generate css code  for linear-generator.
+
+
+7>> CSS TUTORIALS(float, position, media-queries, z-index, ::before, ::after pseudo elements):
+Media-queries for responsive design. 
+
+Elements having float property left/right, floats from the normal flow need clear on same direction(right/left/both) for other element  after that to not go out of normal flow. Two element float on left and right eg image, clear both for element after them eg paragraph.We cannot see effect on paragraph if both are same size so, change height of one you can see paragraph out of normal flow if clear both not used.
+
+How can we set multi-column layout using float(flex-box and grid are replacement for float property). Look video 003.
+
+Now google position property in css with possible values (static default, relative, absolute, fixed and sticky). Using top bottom left and right.
+
+Position relative is relative to its original position(own position) and original position becomes transparent but don’t get overridden by below element ie other content will not adjust to fill the gap left by relative positioned element which is not possible In case of absolute positioned element ie gap gets filled.
+
+Position absolute means relative to parent(any parent may be grand/grand grand parent) with position relative, and if no parent is positioned relative than it uses body for relative positioning as body is always positioned relative. Browser will use other content after that if present to fill the initial position of element shifted using position absolute. 
+
+Position fixed is relative to viewport(screen) and stays as we scroll in top. And in position fixed we will use below content to fill space as in absolute but difference is it get fixed when scroll and remain fixed after it reaches top after scrolling. Can be used in nav bar.
