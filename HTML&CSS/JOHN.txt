@@ -200,4 +200,45 @@ Transform: translate(), rotate(), scale(), skew().
 Transition: (change over time like hover).
 Animation: (change over time with more control over state change like hover)
 
+TRANSFORM: functions:
+a> translate():translate X axis/Y axis/both direction. Eg div{transform:translateX(-20px);transform:translateY(50%)}. OR use div{transform:translate(-20px, 50%)} function. Here 50% is 50% of div height being y value. Three functions translateX(x),translateY(y) OR combined translate(x, y) 
+b> scale(): same as translate ie div{transform:scaleX(2)/scaleY(0.5)/scale(2,0.5)}.  scaleX(x), scaleY(y), scale(x, y).
+c> rotate(): Rotates element in x, y or z line. Same as above two in use, transform values rotate(20deg)===rotateZ(20deg), rotateX(-20deg), rotateY(-54deg).
+d> skew(): transform values skew(20deg, 30deg), skewX(20deg), skewY(30deg). Same as above 
+
+
+
+TRANSITION:
+Transition to change over time,{ transition-property:, transition-duration: , transition-delay: , transition-timing-function:, transition: =(short hand)} can use nice shortened to multiple property for transition as background property.
+Hover example for div…
+div:hover{
+   background:oral;
+   color:white;
+   transform:scale(2, 1.5)
+}
+div{
+ background:green;
+ color:red;
+ transition-property:background, color, transform;
+ transition-duration:4s, 200ms, 500ms;
+ transition-timing-function: ease-out;
+ transition-delay:2s;
+ //shortcut of above
+ //transition:background 4s linear 2s, color 200ms ease-in 2s, transform 500ms ease-in-out 2s;   OR
+//transition:all 4s ease-out 2s; 
+//all=all properties in div:hover 
+}
+
+Shortcut:  transition: transition-property transition-duration transition-timing-function transition-delay ; 
+Above, background transition happens in 4s and color transition happens in 200ms. transition-delay:2s; means transition happens after two sec when hover over.
+Transition-timing-function property is ease by default, 
+ease=slow start, fast, slow end. 
+linear=same speed start to end. 
+ease-in=slow start.
+ease-out=slow end.
+ease-in-out=slow start, fast, slow end.
+
+
+ANIMATION: google animation in css and 2 videos still remain.
+
 
