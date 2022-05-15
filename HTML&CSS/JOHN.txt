@@ -194,3 +194,10 @@ Root pseudo class allow you to access root element ie html element of document a
 :root{
    font-size:20px;   
 }
+
+9>> CSS TRANSFORM, TRANSITION & ANIMATION:
+Transform: translate(), rotate(), scale(), skew().
+Transition: (change over time like hover).
+Animation: (change over time with more control over state change like hover)
+
+
