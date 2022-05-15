@@ -147,3 +147,50 @@ Position relative is relative to its original position(own position) and origina
 Position absolute means relative to parent(any parent may be grand/grand grand parent) with position relative, and if no parent is positioned relative than it uses body for relative positioning as body is always positioned relative. Browser will use other content after that if present to fill the initial position of element shifted using position absolute. 
 
 Position fixed is relative to viewport(screen) and stays as we scroll in top. And in position fixed we will use below content to fill space as in absolute but difference is it get fixed when scroll and remain fixed after it reaches top after scrolling. Can be used in nav bar.
+
+Next we have position sticky that toggles between two values for position ie relative and fixed. Using position sticky on element, initially it is going to be relative and as we going to reach certain point as we scroll, the element going to become fixed and sticks  on screen as fixed positioned element. We need at least one of the value in top, left, bottom and right. 
+Make your nav bar in middle position and use position sticky with top = 0 property it sticks at top when scrolling transiting from relative to fixed position.
+
+Media queries: Responsive design. Style element for different screen sizes. Min-width: starting from & max-width: up to. Mobile first going up rather going down the device. 
+
+Z-index: 0 is default for all element. In z axis which image or element near to you. Make position absolute with top 0 left 0%, 10%, 20% relative to parent div of all element. And div should be relative positioned for image absolute to work. Default 3rd image will be closer as  it is 3rd in HTML change z-index in CSS or position in HTML to change proximity of other image. If you set z-index:0 nothing changes but you can have positive or negative value to change closeness.
+We cannot use OR  z-index does not works for position static elements. Position static is default for each element and z-index don’t work because z-index control z-axis making elements closer then further then other element in same position.
+
+::before and ::after pseudo-elements create an element and insert before or after selected content by that pseudo-selector.
+One property content:””; is required even if it is just empty for pseudo-selector. Does not work for image element as image is content itself.
+Basically we are placing element before/after the content here paragraph content.
+
+P::before{
+   content:”dipen”;
+   display:block;
+   font-weight:bold;
+   font-size:2rem;
+   Color:red;
+}.   
+
+watch video 012. Incomplete…
+
+8>> MORE CSS SELECTORS:(basic selectors, pseudo-class selectors, pseudo-element selectors):
+Universal selector less specific than class, element or id selector. 
+
+Descendent and child selectors: div h1{}=apply to all h1 inside div whether direct/indirect descendants.  div > h1{}=applied only if h1 direct child.
+
+::first-line, ::first-letter selectors: example p::first-line{font-weight:bold;}    p::first-letter{font-size:150%;}
+
+Pseudo classes in CSS:
+Hover pseudo-class selector:  to style when user mouse over. Can be used for any element. We only use one colon. Eg div:hover{}. When we learn transition the changes on hover happen over time not instantly. Here state change here mouse over thus changes properties.
+
+Unlike other elements, Links have specific pseudo classes. 
+Pseudo classes for link are:
+:link- -unvisited links with href.  Eg a:link{} similarly for other selectors.
+:visited- -visited links. 
+:hover- -on hover.
+:active- -as the user clicks.
+a- -all links.
+
+Root pseudo class :root. Essentially selects the root element of our document and has higher specificity. Selects root element means HTML element. We can also select html{} as other normal element as selector in CSS but :root selector is used most. Root selector is mostly used to assign variables value in CSS so it can be use in other part of CSS as refrence. Also can be used in general styling rather than specific. 
+rem is relative to root. Default root font size 16px from browser but we can change using root selector and 1rem=20px from below example. 
+Root pseudo class allow you to access root element ie html element of document and extensively used for variable assignment.
+:root{
+   font-size:20px;   
+}
