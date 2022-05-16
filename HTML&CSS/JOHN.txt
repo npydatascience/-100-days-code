@@ -195,6 +195,7 @@ Root pseudo class allow you to access root element ie html element of document a
    font-size:20px;   
 }
 
+
 9>> CSS TRANSFORM, TRANSITION & ANIMATION:
 Transform: translate(), rotate(), scale(), skew().
 Transition: (change over time like hover).
@@ -239,6 +240,61 @@ ease-out=slow end.
 ease-in-out=slow start, fast, slow end.
 
 
-ANIMATION: google animation in css and 2 videos still remain.
+ANIMATION: google animation in css and 2 videos still remain. Biggest difference between transition and animation is animation gives more option but are similar. For transition we have two state start(0%) state and end(100%) state, we come to start state when transition completes. For animation 0,1,…100% ie many option start, many intermediate and end. Eg during hover we can change color 100 times.
+There is also short hand for animation as in transition google. Animation-fill-mode property video 011 unclear important video.
+
+ANIMATION===TRANSITION+MORE OPTIONS.
 
 
+
+10>> CSS TUTORIAL(css variables, font awesome icon, text-shadow, box-shadow, browser prefixes, semantic HTML tag instead div everywhere, object-fit, Emmet snippets and shortcuts to speed up our workflow during project development):
+
+Css variables or custom components, can change it in one place and use reference  throughout.  
+Mostly scoped globally in root pseudo-class selector but can be scoped locally in each element selector.
+To use the variable reference of local selector, the element should be descendent of local selector element.
+Click on HTML element in browser dev tool to know globally set variables and change them to see changed website.
+Each element inherits global variables and local variable if set.
+
+:root{
+   - -varName:value;
+   - -mainTransition:all 2s linear;
+  //globally scoped
+}
+
+div{
+ - -anotherVar:value;
+ property:var(- -varName);
+ //locally scoped
+}
+
+div h1{
+  property:var(- -anotherVar);
+ transition:var(- -mainTransition);
+}
+
+
+Font awesome icons, go to icon infontawesome.com,  google download font awesome and use or use CDN.
+
+Now text-shadow and box-shadow property. Box-shadow property lead us nicely to browser prefixes.
+Google test shadow css/box shadow css.
+There are also online text and box shadow generator. Using online generator is awesome, they also gives browser prefixes.
+Those shadow looks good if used in hover and transition is done from actual element.
+
+Browser prefixes: also called vender prefixes, is way for different browser to support latest css features. 
+Caniuse.com to see browser supports. And  http://shouldiprefix.com/  you can find actual css property prefixes to use those features which is not supported by browsers.
+as it's kind of an industry standard that vendors use their prefix on newly drafted properties/methods until those become a standard.
+https://caniuse.com/?search=subgrid
+Video 005 to learn css browser prefixes.
+
+
+Semantic tags: rather than div. Use specific element to structure our content. 
+Google semantic html tag and look in image part.
+
+
+Object-fit important CSS property: object-fit: fill/contain/cover/none/scale-down.
+Object fit allow you to resize image/video to fit their container not the div containers. Their containers means if we set width, height in image, to fit that dimension object fit used. If images are side by side, object fit is definitely helps us out.
+If image aspect ratio different then it is very important to use object fit property to make different dimension image behave similar rather then re-sizing them manually using image preview software. 
+Mostly used value is object-fit:cover; so, image is not distorted.
+Watch video: 007 object-fit. Imp.
+
+Emmet shortcut for element, class etc.
